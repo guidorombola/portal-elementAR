@@ -18,3 +18,25 @@
     background-size: cover;
     height: 100%;
   }
+
+  .bg-descargas {
+    background-image: url("../img/back5.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+  }
+  
+  .bg-informacion {
+    background-image: url("../img/back6.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+  }
+
+  .logo-untref img{
+    float: right;
+    display: block;
+    padding-block-end: 10px;
+    height: 80px;
+    width: 190px;
+}
