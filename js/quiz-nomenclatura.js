@@ -389,7 +389,7 @@
     });
 
     // show number of correct answers out of total
-    resultsContainer.innerHTML = `Preguntas respondidas correctamente:${numCorrect} de ${myQuestions.length}`;
+    resultsContainer.innerHTML = `Preguntas respondidas correctamente: ${numCorrect} de ${myQuestions.length}`;
   }
 
   function showSlide(n) {
