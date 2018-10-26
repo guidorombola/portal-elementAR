@@ -30,6 +30,10 @@ a {
   transition: all 0.2s;
 }
 
+p{
+  font-size: 1.50rem;
+}
+
 a:hover {
   color: #f05f40;
 }
@@ -194,11 +198,13 @@ header.masthead h1 {
 
 header.masthead p {
   font-weight: 300;
+  color: #fff;
 }
 
 @media (min-width: 768px) {
   header.masthead p {
-    font-size: 1.15rem;
+    font-size: 1.50rem;
+    color: #fff;
   }
 }
 
