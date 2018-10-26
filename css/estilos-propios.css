@@ -33,10 +33,24 @@
     height: 100%;
   }
 
+  .bg-informacion p{
+    font-size: 1.30rem;
+  }
+
   .logo-untref img{
     float: right;
     display: block;
     padding-block-end: 10px;
     height: 80px;
     width: 190px;
+}
+
+.logo-atomicamente{
+  height: 35px;
+  width: 270px;
+  margin-right: 90%;
+}
+
+.footer p{
+  font-size: 1rem;
 }
