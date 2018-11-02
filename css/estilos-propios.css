@@ -17,6 +17,7 @@
     background-position: center;
     background-size: cover;
     height: 100%;
+    
   }
 
   .bg-descargas {
@@ -53,4 +54,22 @@
 
 .footer p{
   font-size: 1rem;
+}
+
+@media (max-width: 765px) {
+  .bg-elementar p {
+    font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 992px) {
+  p {
+  font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  p {
+  font-size: 1.5rem;
+  }
 }
