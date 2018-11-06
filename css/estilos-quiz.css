@@ -41,9 +41,6 @@ button{
     cursor: pointer;
     margin-bottom: 2rem;
 }
-button:hover{
-    background-color: #38a;
-}
 
 .btn{
   font-family: 'Work Sans', sans-serif;
@@ -94,34 +91,34 @@ input[type=radio] {
   transform: scale(1.5);
 }
 
-@media (min-width: 600px) {
-  .answers {
-    margin-bottom: 20px;
-    text-align: left;
-    display: inline-block;
-    font-size: 3.5rem;
+@media (max-width: 800px) {
+
+  h1 {
+    padding: 0;
+    font-size: 2.2rem;
   }
-  .question{
-    font-size: 3rem;
-    margin-bottom: 10px;
-    }
-    
-    input[type=radio] {
-      -ms-transform: scale(3.5); /* IE 9 */
-      -webkit-transform: scale(3.5); /* Chrome, Safari, Opera */
-      transform: scale(3.5);
-    }
 
-  button{
-    font-family: 'Work Sans', sans-serif;
-    font-size: 2.5rem;
-    background-color: #279;
-    color: #fff;
-    border: 0px;
-    border-radius: 1rem;
-    padding: 20px;
-    cursor: pointer;
-    margin-bottom: 2rem;
-    }
+  button {
+    padding: 0.8rem;
+  }
 
+  .question {
+    font-size: 1.6rem;
+  }
+
+  .answers {
+    font-size: 1.3rem;
+  }
+
+  .btn{
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding-top: 1rem;
+  }
+
+  .quiz-container {
+    margin-top: 0;
+  }
 }
