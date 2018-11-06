@@ -48,7 +48,7 @@ const myQuestions = [
     answers: {
       a: "Óxido hipocloroso",
       b: "Óxido clórico",
-      c: "Óxido perclórico",
+      c: "Anhídrido perclórico",
       d: "Óxido cloroso"
     },
     correctAnswer: "c"
@@ -90,7 +90,7 @@ const myQuestions = [
       a: "Óxido hipobromoso",
       b: "Óxido brómico",
       c: "Óxido perbrómico",
-      d: "Óxido bromoso"
+      d: "Anhídrido bromoso"
     },
     correctAnswer: "d"
   },
@@ -169,7 +169,7 @@ const myQuestions = [
     answers: {
       a: "Óxido de nitrógeno (III)",
       b: "Óxido nítrico",
-      c: "Óxido de nitrógeno (I)",
+      c: "Anhídrido de nitrógeno (I)",
       d: "Óxido nitroso"
     },
     correctAnswer: "c"
@@ -191,7 +191,7 @@ const myQuestions = [
   {
     question: "El Cr2O3 es el:",
     answers: {
-      a: "Óxido de cromo (III)",
+      a: "Anhídrido de cromo (III)",
       b: "Trióxido de cromo",
       c: "Óxido de cromo (II)",
       d: "Óxido de cromo (VI)"
@@ -201,10 +201,10 @@ const myQuestions = [
   {
     question: "El As2O5 es el:",
     answers: {
-      b: "Trióxido de diarsénico",
-      a: "Óxido arsenioso",
+      b: "Anhídrido arsenioso",
+      a: "Trióxido de diarsénico",
       c: "Pentóxido de arsénico",
-      d: "Pentóxido de arsénico"
+      d: "Pentóxido de diarsénico"
     },
     correctAnswer: "d"
   },

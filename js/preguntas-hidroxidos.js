@@ -30,7 +30,7 @@ const myQuestions = [
     correctAnswer: "b"
   },
   {
-    question: "El ácido hidróxido cuproso es el: ",
+    question: "El hidróxido cuproso es el: ",
     answers: {
       a: "Cu(OH)3",
       b: "Cu2(OH)",
