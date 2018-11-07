@@ -6,11 +6,19 @@
 
 
 section {
-  padding: 90px;
+  margin-top: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+img {
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .bg-light{
-  padding: 30px;
+  padding: 3rem;
 }
 
 .sub{
