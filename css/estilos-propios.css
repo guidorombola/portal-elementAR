@@ -60,10 +60,24 @@
   .bg-elementar p {
     font-size: 1.1rem;
     }
+  section{
+    min-height: 850px;
+    padding: 1rem;
+  }
   .logo-atomicamente{
     height: 30px;
-    width: 220px;
-    margin-right: 90%;
+    width: 215px;
+    margin-right: 0%;
+  }
+  header{
+    min-height: 850px;
+    padding: 1rem;
+  }
+  header.masthead{
+    padding-top: 1rem;
+  }
+  a{
+    font-size: 1.3rem;
   }
 }
 
