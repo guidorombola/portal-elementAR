@@ -1,5 +1,7 @@
+var preguntasIncluidas = [];
+
 (function() {
-          
+    
     function formatearNomenclatura(entrada){
       let aux = "";
       for(let i=0; i<entrada.length; i++){
@@ -11,71 +13,57 @@
       }
       return aux;
     }
-  
-    function buildQuiz() {
-      // we'll need a place to store the HTML output
+    
+    function construirQuiz() {
       const output = [];
-  
-      // for each question...
-      myQuestions.forEach((currentQuestion, questionNumber) => {
-        // we'll want to store the list of answer choices
-        const answers = [];
-  
-        // and for each available answer...
-        for (letter in currentQuestion.answers) {
-          // ...add an HTML radio button
+      for(questionNumber=0; questionNumber<10; questionNumber++){
+        const answers = []
+        let preguntaAleatoria = obtenerPreguntaAleatoria();
+        for(letter in myQuestions[preguntaAleatoria].answers){
           answers.push(
             `<label>
                <input type="radio" name="question${questionNumber}" value="${letter}">
                 ${letter} :
-                ${formatearNomenclatura(currentQuestion.answers[letter])}
+                ${formatearNomenclatura(myQuestions[preguntaAleatoria].answers[letter])}
              </label>`
           );
         }
-  
-        // add this question and its answers to the output
         output.push(
           `<div class="slide not-active-slide">
-             <div class="question"> ${formatearNomenclatura(currentQuestion.question)} </div>
-             <div class="answers"> ${answers.join("")} </div>
-           </div>`
+              <div class="question"> ${formatearNomenclatura(myQuestions[preguntaAleatoria].question)} </div>
+              <div class="answers"> ${answers.join("")} </div>
+            </div>`
         );
-      });
-  
-      // finally combine our output list into one string of HTML and put it on the page
+      }
       quizContainer.innerHTML = output.join("");
     }
-  
-    function showResults() {
-      // gather answer containers from our quiz
+
+    function obtenerPreguntaAleatoria() {
+      let preguntaAleatoria = Math.trunc(Math.random() * myQuestions.length-1);
+      while(preguntasIncluidas.indexOf(preguntaAleatoria) != -1){
+        preguntaAleatoria = Math.trunc(Math.random() * myQuestions.length-1);
+      }
+      preguntasIncluidas.push(preguntaAleatoria);
+      return preguntaAleatoria;
+    }
+
+    function mostrarResultados(){
       const answerContainers = quizContainer.querySelectorAll(".answers");
-  
-      // keep track of user's answers
       let numCorrect = 0;
-  
-      // for each question...
-      myQuestions.forEach((currentQuestion, questionNumber) => {
-        // find selected answer
-        const answerContainer = answerContainers[questionNumber];
-        const selector = `input[name=question${questionNumber}]:checked`;
+      for(currentQuestion = 0; currentQuestion < preguntasIncluidas.length; currentQuestion++){
+        
+        const answerContainer = answerContainers[currentQuestion];
+        const selector = `input[name=question${currentQuestion}]:checked`;
         const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-  
-        // if answer is correct
-        if (userAnswer === currentQuestion.correctAnswer) {
-          // add to the number of correct answers
+        
+        if (userAnswer === myQuestions[currentQuestion].correctAnswer) {
           numCorrect++;
-  
-          // color the answers green
-          answerContainers[questionNumber].style.color = "lightgreen";
+          answerContainers[currentQuestion].style.color = "lightgreen";
         } else {
-          // if answer is wrong or blank
-          // color the answers red
-          answerContainers[questionNumber].style.color = "red";
+          answerContainers[currentQuestion].style.color = "red";
         }
-      });
-  
-      // show number of correct answers out of total
-      resultsContainer.innerHTML = `Preguntas respondidas correctamente: ${numCorrect} de ${myQuestions.length}`;
+      }
+      resultsContainer.innerHTML = `Preguntas respondidas correctamente: ${numCorrect} de ${preguntasIncluidas.length}`;
     }
   
     function showSlide(n) {
@@ -112,7 +100,8 @@
     const submitButton = document.getElementById("submit");
   
     // display quiz right away
-    buildQuiz();
+    //buildQuiz();
+    construirQuiz();
   
     const previousButton = document.getElementById("previous");
     const nextButton = document.getElementById("next");
@@ -122,7 +111,8 @@
     showSlide(0);
   
     // on submit, show results
-    submitButton.addEventListener("click", showResults);
+    //submitButton.addEventListener("click", showResults);
+    submitButton.addEventListener("click", mostrarResultados);
     previousButton.addEventListener("click", showPreviousSlide);
     nextButton.addEventListener("click", showNextSlide);
   })();
