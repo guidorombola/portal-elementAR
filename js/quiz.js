@@ -29,7 +29,7 @@ var preguntasIncluidas = [];
           );
         }
         output.push(
-          `<div class="slide not-active-slide">
+          `<div class="slide">
               <div class="question"> ${formatearNomenclatura(myQuestions[preguntaAleatoria].question)} </div>
               <div class="answers"> ${answers.join("")} </div>
             </div>`
@@ -68,7 +68,7 @@ var preguntasIncluidas = [];
   
     function showSlide(n) {
       slides[currentSlide].classList.remove("active-slide");
-      slides[currentSlide].classList.remove("not-active-slide");
+      //slides[currentSlide].classList.remove("not-active-slide");
       slides[n].classList.add("active-slide");
       currentSlide = n;
       
