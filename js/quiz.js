@@ -64,11 +64,11 @@ var preguntasIncluidas = [];
         }
       }
       resultsContainer.innerHTML = `Preguntas respondidas correctamente: ${numCorrect} de ${preguntasIncluidas.length}`;
+      alert("¡Gracias por participar! Podes ver tus resultados en la parte inferior, y recorrer las preguntas para ver tus aciertos (en verde), y errores (en rojo).");
     }
   
     function showSlide(n) {
       slides[currentSlide].classList.remove("active-slide");
-      //slides[currentSlide].classList.remove("not-active-slide");
       slides[n].classList.add("active-slide");
       currentSlide = n;
       
@@ -94,6 +94,14 @@ var preguntasIncluidas = [];
     function showPreviousSlide() {
       showSlide(currentSlide - 1);
     }
+  }
+
+  function showNextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function showPreviousSlide() {
+    showSlide(currentSlide - 1);
   
     const quizContainer = document.getElementById("quiz");
     const resultsContainer = document.getElementById("results");
