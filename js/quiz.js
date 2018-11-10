@@ -94,14 +94,6 @@ var preguntasIncluidas = [];
     function showPreviousSlide() {
       showSlide(currentSlide - 1);
     }
-  }
-
-  function showNextSlide() {
-    showSlide(currentSlide + 1);
-  }
-
-  function showPreviousSlide() {
-    showSlide(currentSlide - 1);
   
     const quizContainer = document.getElementById("quiz");
     const resultsContainer = document.getElementById("results");
