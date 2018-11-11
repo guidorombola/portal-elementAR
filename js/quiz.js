@@ -17,20 +17,24 @@ var preguntasIncluidas = [];
     function construirQuiz() {
       const output = [];
       for(questionNumber=0; questionNumber<10; questionNumber++){
-        const answers = []
-        let preguntaAleatoria = obtenerPreguntaAleatoria();
-        for(letter in myQuestions[preguntaAleatoria].answers){
+        const answers = [];
+        let preguntaActual = questionNumber;
+        if(myQuestions.length>10){
+          preguntaActual = obtenerPreguntaAleatoria();
+        }
+        preguntasIncluidas.push(preguntaActual);
+        for(letter in myQuestions[preguntaActual].answers){
           answers.push(
             `<label>
                <input type="radio" name="question${questionNumber}" value="${letter}">
                 ${letter} :
-                ${formatearNomenclatura(myQuestions[preguntaAleatoria].answers[letter])}
+                ${formatearNomenclatura(myQuestions[preguntaActual].answers[letter])}
              </label>`
           );
         }
         output.push(
           `<div class="slide">
-              <div class="question"> ${formatearNomenclatura(myQuestions[preguntaAleatoria].question)} </div>
+              <div class="question"> ${formatearNomenclatura(myQuestions[preguntaActual].question)} </div>
               <div class="answers"> ${answers.join("")} </div>
             </div>`
         );
@@ -43,7 +47,6 @@ var preguntasIncluidas = [];
       while(preguntasIncluidas.indexOf(preguntaAleatoria) != -1){
         preguntaAleatoria = Math.trunc(Math.random() * myQuestions.length-1);
       }
-      preguntasIncluidas.push(preguntaAleatoria);
       return preguntaAleatoria;
     }
 
