@@ -27,14 +27,14 @@
     height: 100%;
   }
   
-  .bg-informacion {
+  .bg-isotopos {
     background-image: url("../img/back6.jpg");
     background-position: center;
     background-size: cover;
     height: 100%;
   }
 
-  .bg-informacion p{
+  .bg-isotopos p{
     font-size: 1.30rem;
   }
 
